@@ -1,6 +1,6 @@
 'use strict';
 const list = document.querySelector('#app-list');
-const externalHosts = new Set([]);
+const externalHosts = new Set(['classroom-decimal-quest.vercel.app']);
 const apps = (window.classroomApps || []).filter(app => {
   if (typeof app.path !== 'string') return false;
   if (/^(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_-]+\.html$/.test(app.path)) return true;
