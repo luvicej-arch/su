@@ -15,3 +15,7 @@ node_modules/
 preview.png
 .DS_Store
 Thumbs.db
+pages-dist/
+.firebase/
+.vercel/
+firebase-debug.log*
