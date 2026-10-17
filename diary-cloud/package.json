@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "firebase": "13.0.0"
+  },
+  "name": "classroom-diary",
+  "private": true,
+  "scripts": {
+    "build": "node build.cjs",
+    "test:rules": "node tests/rules.cjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "@firebase/rules-unit-testing": "6.0.0"
+  },
+  "overrides": {
+    "@grpc/grpc-js": "1.13.6"
+  }
+}

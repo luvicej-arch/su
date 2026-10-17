@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // users/{uid}/entries/{id}: required title(1..120), body(1..50000), mood(enum),
+    // date(timestamp), createdAt(timestamp, immutable), updatedAt(server timestamp).
+    // Ownership is the immutable uid in the document path; no public profile.
+    function owner(uid) {
+      return request.auth != null && request.auth.uid == uid
+        && request.auth.token.firebase.sign_in_provider == 'google.com'
+        && request.auth.token.email_verified == true;
+    }
+    function validEntry(data) {
+      return data.keys().hasAll(['title','body','mood','date','createdAt','updatedAt'])
+        && data.keys().hasOnly(['title','body','mood','date','createdAt','updatedAt'])
+        && data.title is string && data.title.size() >= 1 && data.title.size() <= 120
+        && data.body is string && data.body.size() >= 1 && data.body.size() <= 50000
+        && data.mood in ['😊','😌','😐','😔','😤']
+        && data.date is timestamp
+        && data.date >= timestamp.date(1900,1,1) && data.date < timestamp.date(2101,1,1)
+        && data.createdAt is timestamp && data.updatedAt is timestamp
+        && data.updatedAt == request.time;
+    }
+    match /users/{uid}/entries/{id} {
+      allow get: if owner(uid);
+      allow list: if owner(uid) && request.query.limit != null && request.query.limit <= 200;
+      allow create: if owner(uid) && validEntry(request.resource.data) && request.resource.data.createdAt == request.time;
+      allow update: if owner(uid) && validEntry(request.resource.data) && request.resource.data.createdAt == resource.data.createdAt;
+      allow delete: if owner(uid);
+    }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

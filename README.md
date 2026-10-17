@@ -5,14 +5,16 @@
 - [교실 도구함](classroom-hub/README.md): 타이머, 소수 탐험대, PDF 글자 수 세기, 개인 일기장.
 - [말글](malgeul/README.md): 맞춤법과 띄어쓰기 미니게임.
 - [소수 탐험대 클라우드 버전](decimal-quest/README.md): 아이디·비밀번호 가입과 개인별 학습 기록 저장.
+- [일기장 클라우드 버전](diary-cloud/README.md): 구글 로그인과 개인별 일기 저장.
 
 ## 사용 주소
 
 - [교실 도구함](https://luvicej-arch.github.io/su/)
 - [수업용 타이머](https://luvicej-arch.github.io/su/timer.html)
 - [소수 탐험대](https://classroom-decimal-quest.vercel.app/)
+- [나의 일기장](https://diary-luvicej-20261017.web.app/)
 
-허브와 타이머는 GitHub Pages, 소수 탐험대는 Vercel에 배포하며 학습 기록은 Supabase 서울 리전에 저장합니다. 일기장 클라우드 버전은 Firebase 구성 후 연결합니다.
+허브와 타이머는 GitHub Pages, 소수 탐험대는 Vercel에 배포하며 학습 기록은 Supabase 서울 리전에 저장합니다. 일기장은 Firebase Hosting에 배포하고 구글 인증과 서울 리전의 Firestore Standard를 사용합니다.
 
 Node.js 24 이상에서 각 폴더의 실행 안내를 따르세요. 동시에 실행하려면 교실 도구함의 PORT를 4174 등으로 지정하세요.
 

@@ -21,3 +21,8 @@ pages-dist/
 firebase-debug.log*
 decimal-quest/dist/
 diary-cloud/dist/
+.firebase.auth.local.json
+firestore-debug.log
+ui-debug.log
+database-debug.log
+diary-cloud/emulator-dist/
