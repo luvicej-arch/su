@@ -19,3 +19,5 @@ pages-dist/
 .firebase/
 .vercel/
 firebase-debug.log*
+decimal-quest/dist/
+diary-cloud/dist/

@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "2.118.0",
+    "esbuild": "0.28.2"
+  },
+  "name": "classroom-decimal-quest",
+  "private": true,
+  "scripts": {
+    "build": "node build.cjs"
+  }
+}
