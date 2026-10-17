@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="교실 화면에서 함께 보는 간단한 수업용 타이머."><title>수업용 타이머 · 교실 도구함</title><link rel="stylesheet" href="styles.css"><script src="timer.js" defer></script></head>
+<body class="timer-body">
+<a class="skip-link" href="#timer-stage">본문으로 건너뛰기</a>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span> 교실 도구함</a><a class="back-link" href="index.html">← 도구함으로</a></header>
+<main id="timer-stage" class="timer-stage">
+<div class="timer-heading"><div><p class="eyebrow">함께 보는 우리 반의 시간</p><h1>수업용 타이머</h1></div><button id="fullscreen" class="button ghost fullscreen-button" type="button" aria-pressed="false"><span aria-hidden="true">⛶</span> <span id="fullscreen-label">전체화면</span></button></div>
+<div class="timer-face"><p id="status" class="status" role="status" aria-live="polite">시간을 정하고 시작해 주세요.</p><div id="time-display" class="time-display" role="timer" aria-label="남은 시간 5분 0초" aria-live="off">05:00</div><div class="progress-track" aria-hidden="true"><div id="progress" class="progress-fill"></div></div></div>
+<form id="timer-form" novalidate><fieldset id="time-inputs"><legend>활동 시간</legend><div class="time-fields"><label for="minutes"><span class="sr-only">분</span><input id="minutes" name="minutes" type="number" min="0" max="99" step="1" value="5" inputmode="numeric" aria-describedby="input-help input-error"> <span>분</span></label><span class="field-separator" aria-hidden="true">:</span><label for="seconds"><span class="sr-only">초</span><input id="seconds" name="seconds" type="number" min="0" max="59" step="1" value="0" inputmode="numeric" aria-describedby="input-help input-error"> <span>초</span></label></div><p id="input-help" class="input-help">1초부터 99분 59초까지 설정할 수 있어요.</p></fieldset><p id="input-error" class="error" role="alert" hidden></p><div class="timer-actions"><button id="start-pause" class="button primary" type="submit"><span id="action-label">시작하기</span><span id="action-icon" aria-hidden="true">▶</span></button><button id="reset" class="button ghost" type="button">초기화 <span aria-hidden="true">↺</span></button></div></form>
+<div class="sound-setting"><label class="sound-label" for="sound"><input id="sound" type="checkbox" role="switch"><span class="switch-track" aria-hidden="true"></span><span>종료 알림음</span><span id="sound-state" class="muted">꺼짐</span></label><p>시간이 끝나면 화면으로도 알려드려요.</p></div><p id="system-notice" class="system-notice" role="status" aria-live="polite" hidden></p>
+<p class="timer-footnote">활동에 몰입하는 시간, 함께 만들어 가요.</p>
+</main><noscript><p class="error">타이머를 사용하려면 브라우저에서 JavaScript를 켜 주세요.</p></noscript>
+</body></html>

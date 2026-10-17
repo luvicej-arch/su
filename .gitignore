@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+**/data/
+*.sqlite*
+*.db
+*.db-*
+*.pem
+*.key
+*.p12
+*.pfx
+node_modules/
+*.log
+*-preview.png
+preview.png
+.DS_Store
+Thumbs.db

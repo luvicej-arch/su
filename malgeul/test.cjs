@@ -1,0 +1,2 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');const questions=require('./dist/questions.js');
+test('Every game has five or more valid, unique questions and explanations',()=>{const seen=new Set();for(const pool of Object.values(questions)){assert.ok(pool.length>=5);for(const q of pool){assert.ok(!seen.has(q.q));seen.add(q.q);assert.equal(q.a.length,2);assert.ok(q.correct===0||q.correct===1);assert.ok(q.why.length>15);}}});
